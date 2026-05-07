@@ -1,0 +1,18 @@
+.report-card {
+  border-left: 4px solid #667eea;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.report-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.report-list {
+  max-height: 1200px;
+}
+
+.status-badge {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.6rem !important;
+}
