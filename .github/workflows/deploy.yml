@@ -39,6 +39,6 @@ jobs:
       - name: Force ECS Deployment
         run: |
           aws ecs update-service \
-          --cluster lapordesa \
+          --cluster laporDesa \
           --service lapordesa-backend-task-service \
           --force-new-deployment
