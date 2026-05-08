@@ -30,7 +30,7 @@ jobs:
 
       - name: Tag Docker Image
         run: |
-          docker tag lapordesa-backend:latest YOUR_ECR_URI:latest
+          docker tag lapordesa-backend:latest 848928399005.dkr.ecr.ap-southeast-2.amazonaws.com/lapordesa-backend:latest
 
       - name: Push Docker Image
         run: |
