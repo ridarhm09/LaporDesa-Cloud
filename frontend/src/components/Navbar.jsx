@@ -36,36 +36,27 @@ export default function NavbarComponent() {
                     <span>LaporDesa Cloud</span>
                 </Navbar.Brand>
 
-                {user && !isAuthPage && (
+                {(!isAuthPage) && (
                     <>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ms-auto d-flex align-items-center gap-2">
-                                <span className="text-light" style={{ fontSize: '0.9rem' }}>
-                                    {user.name} <small className="text-muted">({user.role})</small>
-                                </span>
                                 <Dropdown>
                                     <Dropdown.Toggle 
                                         variant="outline-light" 
                                         id="dropdown-basic"
                                         size="sm"
+                                        className="d-flex align-items-center gap-2"
                                     >
-                                        Menu
+                                        <i className="bi bi-person-circle"></i> Menu
                                     </Dropdown.Toggle>
-                                    <Dropdown.Menu align="end">
-                                        {user.role === 'masyarakat' && (
-                                            <Dropdown.Item onClick={() => navigate('/user')}>
-                                                📋 Dashboard Saya
-                                            </Dropdown.Item>
-                                        )}
-                                        {user.role === 'admin' && (
-                                            <Dropdown.Item onClick={() => navigate('/admin')}>
-                                                ⚙️ Admin Dashboard
-                                            </Dropdown.Item>
-                                        )}
-                                        <Dropdown.Divider />
-                                        <Dropdown.Item onClick={handleLogout} className="text-danger">
-                                            🚪 Logout
+
+                                    <Dropdown.Menu align="end" className="shadow border-0 mt-2">
+                                        <Dropdown.Item onClick={() => navigate('/user')}>
+                                            📋 Dashboard User
+                                        </Dropdown.Item>
+                                        <Dropdown.Item onClick={() => navigate('/admin')}>
+                                            ⚙️ Dashboard Admin
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>

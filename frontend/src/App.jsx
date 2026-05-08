@@ -5,18 +5,7 @@ import Register from './pages/Register';
 import DashboardUser from './pages/DashboardUser';
 import DashboardAdmin from './pages/DashboardAdmin';
 
-const ProtectedRoute = ({ children, role }) => {
-    const token = localStorage.getItem('token');
-    const user = JSON.parse(localStorage.getItem('user') || '{}');
-
-    if (!token) {
-        return <Navigate to="/login" replace />;
-    }
-
-    if (role && user.role !== role) {
-        return <Navigate to="/" replace />;
-    }
-
+const ProtectedRoute = ({ children }) => {
     return children;
 };
 
@@ -46,7 +35,7 @@ export default function App() {
                     } 
                 />
                 
-                <Route path="/" element={<Navigate to="/login" replace />} />
+                <Route path="/" element={<Navigate to="/user" replace />} />
             </Routes>
         </BrowserRouter>
     );
