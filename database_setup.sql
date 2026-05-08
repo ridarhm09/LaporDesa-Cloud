@@ -1,15 +1,8 @@
--- ============================================
--- LaporDesa Cloud - Database Setup
--- Sistem Pelayanan Publik Desa/Kelurahan
--- ============================================
 
--- Buat database
 CREATE DATABASE IF NOT EXISTS lapordesa_db;
 USE lapordesa_db;
 
--- ============================================
 -- Tabel Users
--- ============================================
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -22,9 +15,7 @@ CREATE TABLE users (
     INDEX idx_role (role)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ============================================
 -- Tabel Reports (Laporan/Pengaduan)
--- ============================================
 CREATE TABLE reports (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
